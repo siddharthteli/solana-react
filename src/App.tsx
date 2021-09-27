@@ -1,25 +1,32 @@
 import logo from './logo.svg';
 import './App.css';
 import {Connection, PublicKey} from "@solana/web3.js"
-import React from "react"
+import React, { useState } from "react"
 
-let temp:any;
-class App extends React.Component {
+
+class App extends React.Component<{}, { balance: number}> {
 
   
   constructor(props :any){
     super(props)
-    bal();
-
+    this.state={balance:4};
+    
+    
 
   }
   render() 
   {
+    
     return (
       <div className="App">
-      <p>Value of Balance:--{temp}</p>
+      <p>Value of Balance:--{this.state.balance}</p>
       </div>
     );
+  }
+
+  componentDidMount() {
+    this.setState({balance:bal()})
+
   }
 
   
@@ -37,5 +44,7 @@ async function bal() {
    let temp=await connection.getBalance(address,'confirmed');
    console.log("COnnection value:--",connection);
    console.log("Balance --",temp);
+
+   return temp;
 
 }
