@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import {Connection, PublicKey} from "@solana/web3.js"
 import React, { useState } from "react"
-import {balance} from "./helpers/userBalance"
+import {balance,airDrop} from "./helpers/userBalance"
 
 class App extends React.Component<{}, { balance: number}> {
 
@@ -26,6 +26,7 @@ class App extends React.Component<{}, { balance: number}> {
 
   async componentDidMount() {
     this.setState({balance:await balance()})
+    airDrop();
 
   }
 
