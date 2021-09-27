@@ -24,8 +24,8 @@ class App extends React.Component<{}, { balance: number}> {
     );
   }
 
-  componentDidMount() {
-    this.setState({balance:bal()})
+  async componentDidMount() {
+    this.setState({balance:await bal()})
 
   }
 
