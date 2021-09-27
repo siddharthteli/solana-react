@@ -4,10 +4,10 @@ import {Connection, PublicKey} from "@solana/web3.js"
 import React, { useState } from "react"
 import {balance,airDrop} from "./helpers/userBalance"
 
-class App extends React.Component<{}, { balance: number}> {
+class App extends React.Component{
 
   
-  constructor(props :any){
+  constructor(props){
     super(props)
     this.state={balance:4};
     
