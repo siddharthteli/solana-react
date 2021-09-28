@@ -25,8 +25,7 @@ class App extends React.Component<{}, { balance: number}> {
   }
 
   async componentDidMount() {
-    this.setState({balance:await balance()})
-    airDrop();
+    this.setState({balance:await balance('FrkQkg5fn9v7KGN7b2nK4Q5Mub4AzUhZAeLPcmX6TQcC')});
 
   }
 
