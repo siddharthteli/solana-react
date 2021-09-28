@@ -3,7 +3,7 @@ import './App.css';
 import {Connection, PublicKey} from "@solana/web3.js"
 import React, { useState } from "react"
 import {balance,airDrop} from "./helpers/userBalance"
-
+import Airdrop  from './components/Airdrop/Airdrop';
 class App extends React.Component<{}, { balance: number}> {
 
   
@@ -19,16 +19,12 @@ class App extends React.Component<{}, { balance: number}> {
     
     return (
       <div className="App">
-      <p>Value of Balance:--{this.state.balance}</p>
+      <Airdrop/>
       </div>
     );
   }
 
-  async componentDidMount() {
-    this.setState({balance:await balance()})
-    airDrop();
-
-  }
+ 
 
   
   
