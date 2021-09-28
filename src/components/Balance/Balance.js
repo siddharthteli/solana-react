@@ -15,7 +15,7 @@ export default class Balance extends React.Component
       alert("asdsa")
      let address='83astBRguLMdt2h5U1Tpdq5tjFoJ6noeGwaY3mDLVcri';
       alert("Before balance call");
-     let bal= await balance(address);
+     let bal= await balance();
      console.log("value ofmtemkp"+bal);
      alert("End of onclick");
       }
