@@ -72,7 +72,7 @@ import React from "react"
 
 
 export async function connectTo() {
-    const connection = new Connection("http://localhost:8899", "confirmed"); 
+    const connection = new Connection("https://api.devnet.solana.com", "confirmed"); 
     return connection;
 }
 export async function balance() {
@@ -89,8 +89,9 @@ export async function balance() {
 }
 
 export async function publicAddress() {
-    let address=new PublicKey('83astBRguLMdt2h5U1Tpdq5tjFoJ6noeGwaY3mDLVcri');
+    let address=new PublicKey('FrkQkg5fn9v7KGN7b2nK4Q5Mub4AzUhZAeLPcmX6TQcC');
 
+    return address;
     return address;
 }
 
