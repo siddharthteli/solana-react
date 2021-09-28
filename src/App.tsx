@@ -4,6 +4,7 @@ import {Connection, PublicKey} from "@solana/web3.js"
 import React, { useState } from "react"
 import {balance,airDrop} from "./helpers/userBalance"
 import Airdrop  from './components/Airdrop/Airdrop';
+import Balance  from './components/Balance/Balance';
 class App extends React.Component<{}, { balance: number}> {
 
   
@@ -20,6 +21,7 @@ class App extends React.Component<{}, { balance: number}> {
     return (
       <div className="App">
       <Airdrop/>
+      <Balance/>
       </div>
     );
   }

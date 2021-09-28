@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {airDrop} from '../../helpers/userBalance';
-
+import './Airdrop.css'
 
 export default class Airdrop extends React.Component {
     constructor(props) {
@@ -18,7 +18,7 @@ export default class Airdrop extends React.Component {
             
             <form onSubmit={this.onClick}>
             <label>Airdrop:
-                <input type="text" value={this.state.address}/>
+                <input type="text" />
             </label>
             <input type="submit" value="Send"/>
             </form>
