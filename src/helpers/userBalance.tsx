@@ -45,7 +45,11 @@ export async function connectTo() {
     const connection = new Connection("https://api.devnet.solana.com", "confirmed"); 
     return connection;
 }
+
+
+
 export async function balance(address:String) {
+    alert("inised balance ");
 
     const connection = await connectTo();
     let _address=await publicAddress(address);
