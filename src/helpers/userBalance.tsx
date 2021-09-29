@@ -100,6 +100,7 @@ export async function airDrop() {
     const connection = await connectTo();
     let address=await publicAddress();
     const airdropSignature = await connection.requestAirdrop(address,9999);
+    return airdropSignature;
 
 
 }

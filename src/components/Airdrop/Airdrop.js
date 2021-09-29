@@ -7,31 +7,35 @@ export default class Airdrop extends React.Component {
     constructor(props) {
         super(props)
 
-        this.state={address:''};
+        this.state={address:'dd'};
 
      
 
     }
+    Click =async ()  =>{
 
-    render() {
+    let sign=await airDrop(this.state.address);
+   console.log("value of signature---"+sign);
+       
+
+    }
+
+    Change =(e) => {
+        console.log("inside change handler");
+       
+        this.setState({address: e.target.value});
+
+    }
+
+    render() { 
         return <div>
+            <label>Airdrop:</label>
+                <input type="text" value={this.state.address} onChange={this.Change}/>
             
-            <form onSubmit={this.onClick}>
-            <label>Airdrop:
-                <input type="text" />
-            </label>
-            <input type="submit" value="Send"/>
-            </form>
+            <button value="Send" onClick={this.Click}>Airdrop</button > 
+            
         </div>
     }
 
-    componentDidMount() {
-        function onClick() {
-
-            airDrop(this.state.address);
-
-
-        }
-
-    }
+  
 }
