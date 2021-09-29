@@ -20,7 +20,7 @@ class App extends React.Component<{}, { balance: number}> {
     
     return (
       <div className="App">
- 
+      <Airdrop/>
       <Balance/>
       </div>
     );
