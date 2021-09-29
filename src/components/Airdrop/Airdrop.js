@@ -7,14 +7,15 @@ export default class Airdrop extends React.Component {
     constructor(props) {
         super(props)
 
-        this.state={address:'dd'};
+        this.state={address:'d3FKNt6LaneCKy63q7jKvb3w9XwpwQokvEHPeD9NgLNNR'};
 
       
 
     }
     Click =async ()  =>{
         try{
-            let sign=await airDrop(this.state.address);
+            let add=this.state.address;
+            let sign=await airDrop(add);
    console.log("value of signature---"+sign);
 
         }

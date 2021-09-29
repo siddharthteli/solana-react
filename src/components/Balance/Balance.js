@@ -14,7 +14,7 @@ export default class Balance extends React.Component
      onClick= async() =>{
     
       this.setState({balance: await balance(this.state.address)});
-     alert("Balance "+this.state.balance);
+    
      this.setState({displayAddress:this.state.address});
       }
       onChange=(e) => {
@@ -27,7 +27,8 @@ export default class Balance extends React.Component
                <input type="text" value={this.state.address} onChange={this.onChange} />
               <button onClick={this.onClick}>Check</button>
             
-            <h1>Balance of {this.state.displayAddress} is {this.state.balance}</h1>
+            <h4>Balance of {this.state.displayAddress} is {this.state.balance}</h4>
+            
         </div>
     }
 

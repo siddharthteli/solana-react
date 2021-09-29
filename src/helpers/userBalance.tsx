@@ -72,7 +72,7 @@ import React from "react"
 
 
 export async function connectTo() {
-    const connection = new Connection("https://api.devnet.solana.com", "confirmed"); 
+    const connection = new Connection("https://api.testnet.solana.com", "confirmed"); 
     return connection;
 }
 export async function balance(add:String) {
@@ -97,10 +97,31 @@ export async function publicAddress(add:String) {
 
 
 export async function airDrop(add:String) {
-    const connection = await connectTo();
-    let address=await publicAddress(add);
-    const airdropSignature = await connection.requestAirdrop(address,9999);
-    return airdropSignature;
+    
 
+    console.log("Inside airdrop");
+    const connection = await connectTo();
+    console.log("after connection");
+    let address=await publicAddress(add);
+    console.log("called publicaddress");
+    try{
+        let airdropSignature = await connection.requestAirdrop(address,1000000000);
+        await connection.confirmTransaction(airdropSignature);
+        console.log("called request airdrop");
+        return airdropSignature;
+    
+    }
+    catch(e){
+        console.log("Error while requesting airdrop");
+        return -1;
+    }
+    
+    
+   
 
 }
+
+
+
+
+
