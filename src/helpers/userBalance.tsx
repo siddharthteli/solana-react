@@ -75,10 +75,10 @@ export async function connectTo() {
     const connection = new Connection("https://api.devnet.solana.com", "confirmed"); 
     return connection;
 }
-export async function balance() {
+export async function balance(add:String) {
 
     const connection = await connectTo();
-    let address=await publicAddress();
+    let address=await publicAddress(add);
     
    let temp=await connection.getBalance(address,'confirmed');
    console.log("COnnection value:--",connection);
@@ -88,17 +88,17 @@ export async function balance() {
 
 }
 
-export async function publicAddress() {
-    let address=new PublicKey('FrkQkg5fn9v7KGN7b2nK4Q5Mub4AzUhZAeLPcmX6TQcC');
+export async function publicAddress(add:String) {
+    let address=new PublicKey(add);
 
     return address;
-    return address;
+    
 }
 
 
-export async function airDrop() {
+export async function airDrop(add:String) {
     const connection = await connectTo();
-    let address=await publicAddress();
+    let address=await publicAddress(add);
     const airdropSignature = await connection.requestAirdrop(address,9999);
     return airdropSignature;
 

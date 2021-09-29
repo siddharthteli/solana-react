@@ -9,13 +9,21 @@ export default class Airdrop extends React.Component {
 
         this.state={address:'dd'};
 
-     
+      
 
     }
     Click =async ()  =>{
-
-    let sign=await airDrop(this.state.address);
+        try{
+            let sign=await airDrop(this.state.address);
    console.log("value of signature---"+sign);
+
+        }
+
+        catch(e) {
+            console.log("error Hai bhai----"+e.toString());
+        }
+ 
+    
        
 
     }
